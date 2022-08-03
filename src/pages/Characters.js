@@ -25,20 +25,21 @@ function Characters() {
             {isLoading === true ? (
                 <h1>En cours de chargement</h1>
             ) : (
-                <>
-                    {data.results.map((character, index) => {
-                        const imgSrc = character.thumbnail.path + '.' + character.thumbnail.extension;
-                        return (
-                            <div key={index}>
-                                <p><Link to={`/character/${character._id}`}>{character.name}</Link></p>
-                                <p><Link to={`/comics/${character._id}`}>Voir les comics</Link></p>
+                <div className="container">
+                    <div className="row">
+                        {data.results.map((character, index) => {
+                            const imgSrc = character.thumbnail.path + '.' + character.thumbnail.extension;
+                            return (
+                                <div className="col-md-3" key={index}>
+                                    <img className="character" src={imgSrc} alt={character.name} />
+                                    <p><Link to={`/character/${character._id}`}>{character.name}</Link></p>
+                                    <p><Link to={`/comics/${character._id}`}>Voir les comics</Link></p>
 
-                                <p>{character.description}</p>
-                                <img src={imgSrc} alt={character.name} />
-                            </div>
-                        );
-                    })}
-                </>
+                                    <p>{character.description}</p>
+                                </div>
+                            );
+                        })}
+                    </div></div>
             )}
         </div>
     );
