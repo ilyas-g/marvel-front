@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Characters from "./pages/Characters";
 import Character from "./pages/Character";
 import Comics from "./pages/Comics";
+import Comic from "./pages/Comic";
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
           <Route path="/character/:characterId" element={<Character />} />
           <Route path="/characters" element={<Characters />} />
           <Route path="/comics" element={<Comics />} />
-          {/* <Route path="/comic/:characterId" element={<Comic />} /> */}
+          <Route path="/comics/:characterId" element={<Comic />} />
         </Routes>
       </Router>
     </div>
