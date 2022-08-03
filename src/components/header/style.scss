@@ -1,0 +1,23 @@
+header {
+    background-color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+
+    ul {
+        list-style: none;
+        display: flex;
+
+        li {
+            padding: 0 10px;
+        }
+    }
+
+    .headerLeft {
+        display: flex;
+    }
+}
+
+.logo {
+    width: 135px;
+}
