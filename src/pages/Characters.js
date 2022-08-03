@@ -31,6 +31,7 @@ function Characters() {
                         return (
                             <div key={index}>
                                 <p><Link to={`/character/${character._id}`}>{character.name}</Link></p>
+                                <p><Link to={`/comics/${character._id}`}>Voir les comics</Link></p>
 
                                 <p>{character.description}</p>
                                 <img src={imgSrc} alt={character.name} />
