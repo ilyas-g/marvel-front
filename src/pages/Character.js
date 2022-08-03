@@ -36,7 +36,7 @@ const Character = () => {
                 <p><strong>{data.name}</strong> - {data.description}</p>
                 <h2>{data.comics[0].MARQUE}</h2>
                 {data.comics.map((comic, index) => {
-                    return <p>{comic}</p>;
+                    return <p key={index}>{comic}</p>;
                 })}
             </>
         )}
