@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //pages
 import Home from "./pages/Home";
 import Characters from "./pages/Characters";
+import Character from "./pages/Character";
 
 function App() {
 
@@ -12,7 +13,7 @@ function App() {
         {/* <Header token={token} setUser={setUser} /> */}
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/offer/:offerId" element={<Offer />} /> */}
+          <Route path="/character/:characterId" element={<Character />} />
           <Route path="/characters" element={<Characters />} />
         </Routes>
       </Router>

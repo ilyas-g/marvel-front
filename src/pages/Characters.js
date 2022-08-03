@@ -1,5 +1,6 @@
 import { useState, useEffect, React } from 'react';
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function Characters() {
     const [data, setData] = useState();
@@ -29,7 +30,8 @@ function Characters() {
                         const imgSrc = character.thumbnail.path + '.' + character.thumbnail.extension;
                         return (
                             <div key={index}>
-                                <p>{character.name}</p>
+                                <p><Link to={`/character/${character._id}`}>{character.name}</Link></p>
+
                                 <p>{character.description}</p>
                                 <img src={imgSrc} alt={character.name} />
                             </div>
