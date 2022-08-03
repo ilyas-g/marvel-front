@@ -6,13 +6,22 @@ import Characters from "./pages/Characters";
 import Character from "./pages/Character";
 import Comics from "./pages/Comics";
 import Comic from "./pages/Comic";
+import Header from "./components/header/Header";
 
 function App() {
 
+  const onSubmit = (event) => {
+    event.preventDefault();
+    console.log('onSubmit okokok');
+  };
+
+  const onClick = () => {
+    console.log("onClick okokok");
+  };
   return (
     <div className="App">
       <Router>
-        {/* <Header token={token} setUser={setUser} /> */}
+        <Header onSubmit={onSubmit} onClick={onClick} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/character/:characterId" element={<Character />} />
