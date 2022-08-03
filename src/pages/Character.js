@@ -16,9 +16,8 @@ const Character = () => {
                 const response = await axios.get(`http://localhost:3001/character/${characterId}`);
                 setData(response.data);
                 // console.log(response.data);
-                // J'exécute mon setIsLoading après avoir fait mon setData
                 setIsLoading(false);
-                console.log("test: " + response.data);
+
             } catch (error) {
                 console.log(error.message);
             }
@@ -35,10 +34,10 @@ const Character = () => {
         ) : (
             <>
                 <p><strong>{data.name}</strong> - {data.description}</p>
-                {/* <h2>{data.product_details[0].MARQUE}</h2>
-                {data.product_details.map((detail, index) => {
-                    return <p>MAAAAAAAAAAAAAAAAAAAAAAA {detail.MARQUE}</p>;
-                })} */}
+                <h2>{data.comics[0].MARQUE}</h2>
+                {data.comics.map((comic, index) => {
+                    return <p>{comic}</p>;
+                })}
             </>
         )}
     </div>);
