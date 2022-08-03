@@ -6,6 +6,8 @@ export default function Home() {
         <div>Home
             <br />
             <Link to='/characters'>Personnages</Link>
+            <br />
+            <Link to='/comics'>Comics</Link>
         </div>
     );
 }
