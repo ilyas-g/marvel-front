@@ -34,7 +34,8 @@ export default function Comics() {
                             return (
                                 <div className="col-md-3" key={index}>
                                     <img className="character" src={imgSrc} alt={comic.title} />
-                                    <p><Link to={`/comics/${comic._id}`}>{comic.title}</Link></p>
+                                    {/* <p><Link to={`/comics/${comic._id}`}>{comic.title}</Link></p> */}
+                                    <p>{comic.title}</p>
 
                                     <p>{comic.description}</p>
                                 </div>

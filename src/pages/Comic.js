@@ -25,7 +25,7 @@ const Comic = () => {
         fetchData();
     }, [characterId]);
 
-    console.log(characterId);
+    console.log("charac: " + characterId);
     return (<div className="page product">
         <p>Offer id : {characterId}</p>
         {isLoading === true ? (
@@ -33,10 +33,10 @@ const Comic = () => {
             <h1>En cours de chargement</h1>
         ) : (
             <>
-
-                <h2>{data.comics[0].title}</h2>
+                <h2>Heros: {data.name}</h2>
+                <p>{data.comics[0].title}</p>
                 {data.comics.map((comic, index) => {
-                    return <p key={index}>{comic.title}</p>;
+                    return <p key={index}>{comic.title} - {comic._id}</p>;
                 })}
             </>
         )}
