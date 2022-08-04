@@ -27,19 +27,21 @@ export default function Comics() {
             {isLoading === true ? (
                 <h1>En cours de chargement</h1>
             ) : (
-                <>
-                    {data.results.map((comic, index) => {
-                        const imgSrc = comic.thumbnail.path + '.' + comic.thumbnail.extension;
-                        return (
-                            <div key={index}>
-                                <p><Link to={`/comic/${comic._id}`}>{comic.name}</Link></p>
+                <div className="container">
+                    <div className="row">
+                        {data.results.map((comic, index) => {
+                            const imgSrc = comic.thumbnail.path + '.' + comic.thumbnail.extension;
+                            return (
+                                <div className="col-md-3" key={index}>
+                                    <img className="character" src={imgSrc} alt={comic.title} />
+                                    <p><Link to={`/comics/${comic._id}`}>{comic.title}</Link></p>
 
-                                <p>{comic.description}</p>
-                                <img src={imgSrc} alt={comic.name} />
-                            </div>
-                        );
-                    })}
-                </>
+                                    <p>{comic.description}</p>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
             )}
         </div>
     );
