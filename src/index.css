@@ -33,3 +33,11 @@ a:hover {
 .d-flex {
   display: flex;
 }
+
+.p-relative {
+  position: relative;
+}
+
+.p-absolute {
+  position: absolute;
+}

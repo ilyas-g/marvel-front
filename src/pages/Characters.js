@@ -1,6 +1,7 @@
 import { useState, useEffect, React } from 'react';
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Card from '../components/card/Card';
 
 function Characters() {
     const [data, setData] = useState();
@@ -35,25 +36,23 @@ function Characters() {
             {isLoading === true ? (
                 <h1>En cours de chargement</h1>
             ) : (
-                <div className="container">
-                    <div className="row">
-                        {data.results.map((character, index) => {
-                            const imgSrc = character.thumbnail.path + '.' + character.thumbnail.extension;
-                            return (
-                                <div className="col-md-3" key={index}>
-                                    <img className="character" src={imgSrc} alt={character.name} />
-                                    <p><Link to={`/character/${character._id}`}>{character.name}</Link></p>
-                                    <p><Link to={`/comics/${character._id}`}>Voir les comics</Link></p>
+                <div className="container content-grid">
 
-                                    <p>{character.description}</p>
+                    {data.results.map((character, index) => {
+                        const imgSrc = character.thumbnail.path + '.' + character.thumbnail.extension;
+                        return (
+                            <>
+                                <div className="col-md-3 grid" key={index}>
+                                    <Card imgSrc={imgSrc} name={character.name} description={character.description} toChara={`/character/${character._id}`} toComics={`/comics/${character._id}`} />
                                 </div>
-                            );
-                        })}
-                        <div>
-                            <div onClick={nextPage}> Previous Page </div>
-                            <div onClick={previousPage}> Next Page </div>
-                        </div>
-                    </div></div>
+                            </>
+                        );
+                    })}
+                    <div>
+                        <div onClick={nextPage}> Previous Page </div>
+                        <div onClick={previousPage}> Next Page </div>
+                    </div>
+                </div>
             )}
         </div>
     );

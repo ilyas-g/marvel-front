@@ -1,9 +1,15 @@
-.container {
+/* .container {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+} */
+
+.container {
+  display: flex;
+  align-items: stretch;
+  flex-flow: row wrap;
 }
 
 .row {
@@ -16,13 +22,19 @@
 }
 
 .col-md-3 {
-  -ms-flex: 0 0 25%;
-  flex: 0 0 25%;
-  max-width: 25%;
+  -ms-flex: 0 0 20%;
+  flex: 0 0 20%;
+  max-width: 20%;
   margin-bottom: 30px;
 }
 
 .character {
   max-width: 200px;
   width: 100%;
+}
+
+.content-grid {
+  max-width: 1240px;
+  padding: 10px 20px 0;
+  margin: 0 auto;
 }
