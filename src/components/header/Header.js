@@ -3,7 +3,7 @@ import './style.scss';
 import logo from '../../assets/images/logo.png';
 import { Link } from "react-router-dom";
 
-export default function Header({ onClick, onSubmit }) {
+export default function Header() {
     return (
         <header>
             <div className='headerLeft'>
