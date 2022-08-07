@@ -1,14 +1,11 @@
 import { useState, useEffect, React } from 'react';
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 export default function Comics() {
     const [data, setData] = useState();
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        //Avec un tableau vide en deuxième argument
-        // La fonction useEffect ne sera déclenchée qu'une fois fois, au chargement du composant
         const fetchData = async () => {
             try {
                 const response = await axios.get("https://marvelorion2022.herokuapp.com/comics");

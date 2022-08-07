@@ -1,16 +1,13 @@
 import { useState, useEffect, React } from 'react';
 import axios from "axios";
-import { Link } from "react-router-dom";
 import Card from '../components/card/Card';
 
 function Characters() {
     const [data, setData] = useState();
     const [isLoading, setIsLoading] = useState(true);
-    const [limit, setLimit] = useState(20);
-    const [skip, setSkip] = useState(0);
     useEffect(() => {
 
-        const fetchData = async (limit, skip) => {
+        const fetchData = async () => {
             try {
                 const response = await axios.get(`https://marvelorion2022.herokuapp.com/characters`);
                 setData(response.data);
@@ -20,16 +17,9 @@ function Characters() {
                 console.log(error.message);
             }
         };
-        fetchData(limit, skip);
-    }, [skip, limit]);
+        fetchData();
+    }, []);
 
-    const nextPage = () => {
-        setSkip(skip + limit);
-    };
-
-    const previousPage = () => {
-        setSkip(skip - limit);
-    };
     return (
         <div className="App">
             {isLoading === true ? (
