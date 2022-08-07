@@ -29,3 +29,19 @@ a {
 a:hover {
   color: #ff0000;
 }
+
+.d-flex {
+  display: flex;
+}
+
+.p-relative {
+  position: relative;
+}
+
+.p-absolute {
+  position: absolute;
+}
+
+.text-center {
+  text-align: center;
+}

@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect, React } from 'react';
+import Comic from "./Comic";
+import Panel from "../components/panel/Panel";
 
 const Character = () => {
     const { characterId } = useParams();
@@ -13,9 +15,9 @@ const Character = () => {
         // La fonction useEffect ne sera déclenchée qu'une fois fois, au chargement du composant
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/character/${characterId}`);
+                const response = await axios.get(`https://marvelorion2022.herokuapp.com/character/${characterId}`);
                 setData(response.data);
-                // console.log(response.data);
+                console.log(response.data);
                 setIsLoading(false);
 
             } catch (error) {
@@ -26,21 +28,22 @@ const Character = () => {
     }, [characterId]);
 
     console.log(characterId);
-    return (<div className="page product">
-        <p>Offer id : {characterId}</p>
-        {isLoading === true ? (
-            // Object key object value
-            <h1>En cours de chargement</h1>
-        ) : (
-            <>
-                <p><strong>{data.name}</strong> - {data.description}</p>
-                <h2>{data.comics[0].MARQUE}</h2>
-                {data.comics.map((comic, index) => {
-                    return <p key={index}>{comic}</p>;
-                })}
-            </>
-        )}
-    </div>);
+
+    return (
+        <div className="page product">
+            {isLoading === true ? (
+                <h1>En cours de chargement</h1>
+            ) : (
+                <>
+                    <Panel
+                        name={data.name}
+                        description={data.description}
+                        img={`${data.thumbnail.path}.${data.thumbnail.extension}`}
+                    />
+                    <Comic />
+                </>
+            )}
+        </div>);
 };
 
 export default Character;

@@ -11,7 +11,7 @@ export default function Comics() {
         // La fonction useEffect ne sera déclenchée qu'une fois fois, au chargement du composant
         const fetchData = async () => {
             try {
-                const response = await axios.get("http://localhost:3001/comics");
+                const response = await axios.get("https://marvelorion2022.herokuapp.com/comics");
                 setData(response.data);
                 setIsLoading(false);
                 console.log(response.data);
@@ -32,9 +32,9 @@ export default function Comics() {
                         {data.results.map((comic, index) => {
                             const imgSrc = comic.thumbnail.path + '.' + comic.thumbnail.extension;
                             return (
-                                <div className="col-md-3" key={index}>
-                                    <img className="character" src={imgSrc} alt={comic.title} />
-                                    <p><Link to={`/comics/${comic._id}`}>{comic.title}</Link></p>
+                                <div className="col" key={index}>
+                                    <img className="comic" src={imgSrc} alt={comic.title} />
+                                    <p>{comic.title}</p>
 
                                     <p>{comic.description}</p>
                                 </div>

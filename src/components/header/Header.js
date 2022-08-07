@@ -7,7 +7,7 @@ export default function Header({ onClick, onSubmit }) {
     return (
         <header>
             <div className='headerLeft'>
-                <img className='logo' src={logo} alt="Marvel" />
+                <Link to='/'><img className='logo' src={logo} alt="Marvel" /></Link>
                 <nav>
                     <ul>
                         <li>
@@ -19,10 +19,6 @@ export default function Header({ onClick, onSubmit }) {
                     </ul>
                 </nav>
             </div>
-            <form onSubmit={onSubmit}>
-                <input type="search" placeholder="Search Comics, Characters, Etc"></input>
-                <input type="submit" value="Search" onClick={onClick} />
-            </form>
         </header>
     );
 }
