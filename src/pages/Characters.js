@@ -37,10 +37,6 @@ function Characters() {
                             </>
                         );
                     })}
-                    <div>
-                        <div onClick={nextPage}> Previous Page </div>
-                        <div onClick={previousPage}> Next Page </div>
-                    </div>
                 </div>
             )}
         </div>
