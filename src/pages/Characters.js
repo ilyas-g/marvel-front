@@ -9,8 +9,7 @@ function Characters() {
     const [limit, setLimit] = useState(20);
     const [skip, setSkip] = useState(0);
     useEffect(() => {
-        //Avec un tableau vide en deuxième argument
-        // La fonction useEffect ne sera déclenchée qu'une fois fois, au chargement du composant
+
         const fetchData = async (limit, skip) => {
             try {
                 const response = await axios.get(`https://marvelorion2022.herokuapp.com/characters`);
