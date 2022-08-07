@@ -19,10 +19,6 @@ export default function Header({ onClick, onSubmit }) {
                     </ul>
                 </nav>
             </div>
-            <form onSubmit={onSubmit}>
-                <input type="search" placeholder="Search Comics, Characters, Etc"></input>
-                <input type="submit" value="Search" onClick={onClick} />
-            </form>
         </header>
     );
 }

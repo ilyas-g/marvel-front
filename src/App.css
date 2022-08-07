@@ -1,11 +1,3 @@
-/* .container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-} */
-
 .container {
   display: flex;
   align-items: stretch;
@@ -17,18 +9,17 @@
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  /* margin-right: -15px;
-  margin-left: -15px; */
 }
 
-.col-md-3 {
+.col {
   -ms-flex: 0 0 20%;
   flex: 0 0 20%;
   max-width: 20%;
   margin-bottom: 30px;
 }
 
-.character {
+.character,
+.comic {
   max-width: 200px;
   width: 100%;
 }

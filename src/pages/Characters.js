@@ -13,7 +13,7 @@ function Characters() {
         // La fonction useEffect ne sera déclenchée qu'une fois fois, au chargement du composant
         const fetchData = async (limit, skip) => {
             try {
-                const response = await axios.get(`http://localhost:3001/characters`);
+                const response = await axios.get(`https://marvelorion2022.herokuapp.com/characters`);
                 setData(response.data);
                 setIsLoading(false);
                 console.log(response.data);
@@ -42,7 +42,7 @@ function Characters() {
                         const imgSrc = character.thumbnail.path + '.' + character.thumbnail.extension;
                         return (
                             <>
-                                <div className="col-md-3 grid" key={index}>
+                                <div className="col grid" key={index}>
                                     <Card imgSrc={imgSrc} name={character.name} description={character.description} toChara={`/character/${character._id}`} toComics={`/comics/${character._id}`} />
                                 </div>
                             </>
