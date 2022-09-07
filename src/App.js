@@ -6,6 +6,7 @@ import Characters from "./pages/Characters";
 import Character from "./pages/Character";
 import Comics from "./pages/Comics";
 import Comic from "./pages/Comic";
+import Favoris from "./pages/Favoris";
 import Header from "./components/header/Header";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/characters" element={<Characters />} />
           <Route path="/comics" element={<Comics />} />
           <Route path="/comics/:characterId" element={<Comic />} />
+          <Route path="/favoris" element={<Favoris />} />
         </Routes>
       </Router>
     </div>

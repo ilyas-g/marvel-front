@@ -16,6 +16,9 @@ export default function Header() {
                         <li>
                             <Link to='/comics'>Comics</Link>
                         </li>
+                        <li>
+                            <Link to='/favoris'>Favoris</Link>
+                        </li>
                     </ul>
                 </nav>
             </div>
