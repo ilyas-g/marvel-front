@@ -10,6 +10,8 @@ const Character = () => {
     const [data, setData] = useState();
     const [isLoading, setIsLoading] = useState(true);
 
+    const [favoris, setFavoris] = useState(false);
+
     useEffect(() => {
         //Avec un tableau vide en deuxième argument
         // La fonction useEffect ne sera déclenchée qu'une fois fois, au chargement du composant
@@ -39,6 +41,8 @@ const Character = () => {
                         name={data.name}
                         description={data.description}
                         img={`${data.thumbnail.path}.${data.thumbnail.extension}`}
+                        onClick={() => setFavoris(favoris => !favoris)}
+                        text={favoris === true ? "okok" : "not ok"}
                     />
                     <Comic />
                 </>
