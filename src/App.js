@@ -6,7 +6,7 @@ import Characters from "./pages/Characters";
 import Character from "./pages/Character";
 import Comics from "./pages/Comics";
 import Comic from "./pages/Comic";
-import Header from "./components/header/Header";
+import Header from "./components/header/Header.tsx";
 
 function App() {
 
