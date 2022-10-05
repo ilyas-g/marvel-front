@@ -2,7 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 
-export default function Card({ imgSrc, name, description, toChara, toComics }) {
+interface Props {
+    name: string,
+    description: string,
+    toChara: string,
+    toComics: string,
+    imgSrc: string
+}
+const Card: React.FC<Props> = ({name, description, toChara, toComics, imgSrc}): JSX.Element | null => {
     const truncate = (text) =>
         text.length > 150 ? `${text.substring(0, 120)}...` : text;
     const newDesc = truncate(description);
@@ -19,3 +26,5 @@ export default function Card({ imgSrc, name, description, toChara, toComics }) {
         </div>
     );
 }
+
+export default Card;

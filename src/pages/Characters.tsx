@@ -1,9 +1,10 @@
-import { useState, useEffect, React } from 'react';
+import React from 'react';
+import { useState, useEffect } from 'react';
 import axios from "axios";
-import Card from '../components/card/Card';
+import Card from '../components/card/Card.tsx';
 
 function Characters() {
-    const [data, setData] = useState();
+    const [data, setData] = useState<{[key: string]: any}>({});
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
 
@@ -32,7 +33,13 @@ function Characters() {
                         return (
                             <>
                                 <div className="col grid" key={index}>
-                                    <Card imgSrc={imgSrc} name={character.name} description={character.description} toChara={`/character/${character._id}`} toComics={`/comics/${character._id}`} />
+                                    <Card 
+                                        imgSrc={imgSrc}
+                                        name={character.name}
+                                        description={character.description}
+                                        toChara={`/character/${character._id}`}
+                                        toComics={`/comics/${character._id}`}
+                                    />
                                 </div>
                             </>
                         );
