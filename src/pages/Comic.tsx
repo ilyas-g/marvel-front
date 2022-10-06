@@ -1,11 +1,12 @@
+import React from 'react';
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { useState, useEffect, React } from 'react';
+import { useState, useEffect } from 'react';
 
 const Comic = () => {
     const { characterId } = useParams();
 
-    const [data, setData] = useState();
+    const [data, setData] = useState < { [key: string]: any } > ({});
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {

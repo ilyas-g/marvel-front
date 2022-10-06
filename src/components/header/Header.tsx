@@ -3,7 +3,7 @@ import './style.scss';
 import logo from '../../assets/images/logo.png';
 import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function Header(): JSX.Element | null {
     return (
         <header>
             <div className='headerLeft'>

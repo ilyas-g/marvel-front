@@ -1,7 +1,13 @@
 import React from 'react';
 import './style.scss';
 
-export default function Panel({ name, description, img }) {
+interface Props {
+    name: string,
+    description: string,
+    img: string
+}
+
+const Panel: React.FC<Props> = ({name, description, img}) => {
     return (
         <div className='panel'>
             <div className='infos'>
@@ -14,3 +20,5 @@ export default function Panel({ name, description, img }) {
         </div>
     );
 }
+
+export default Panel;

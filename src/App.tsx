@@ -1,27 +1,25 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 //pages
-import Home from "./pages/Home";
-import Characters from "./pages/Characters";
-import Character from "./pages/Character";
-import Comics from "./pages/Comics";
-import Comic from "./pages/Comic";
-import Header from "./components/header/Header";
+// @ts-ignore
+import Home from "./pages/Home.tsx";
+// @ts-ignore
+import Characters from "./pages/Characters.tsx";
+// @ts-ignore
+import Character from "./pages/Character.tsx";
+// @ts-ignore
+import Comics from "./pages/Comics.tsx";
+// @ts-ignore
+import Comic from "./pages/Comic.tsx";
+// @ts-ignore
+import Header from "./components/header/Header.tsx";
 
 function App() {
-
-  const onSubmit = (event) => {
-    event.preventDefault();
-    console.log('onSubmit okokok');
-  };
-
-  const onClick = () => {
-    console.log("onClick okokok");
-  };
   return (
     <div className="App">
       <Router>
-        <Header onSubmit={onSubmit} onClick={onClick} />
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/character/:characterId" element={<Character />} />

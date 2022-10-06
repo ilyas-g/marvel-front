@@ -1,8 +1,9 @@
-import { useState, useEffect, React } from 'react';
+import React from 'react';
+import { useState, useEffect } from 'react';
 import axios from "axios";
 
 export default function Comics() {
-    const [data, setData] = useState();
+    const [data, setData] = useState < { [key: string]: any } > ({});
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {

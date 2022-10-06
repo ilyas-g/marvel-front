@@ -1,13 +1,14 @@
+import React from 'react';
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { useState, useEffect, React } from 'react';
-import Comic from "./Comic";
-import Panel from "../components/panel/Panel";
+import { useState, useEffect } from 'react';
+import Comic from "./Comic.tsx";
+import Panel from "../components/panel/Panel.tsx";
 
 const Character = () => {
     const { characterId } = useParams();
 
-    const [data, setData] = useState();
+    const [data, setData] = useState<{[key: string]: any}>({});
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
