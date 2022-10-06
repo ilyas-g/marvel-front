@@ -7,7 +7,6 @@ function Characters() {
     const [data, setData] = useState<{[key: string]: any}>({});
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
-
         const fetchData = async () => {
             try {
                 const response = await axios.get(`https://marvelorion2022.herokuapp.com/characters`);

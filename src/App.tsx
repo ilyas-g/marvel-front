@@ -20,7 +20,6 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        {/* <Header onSubmit={onSubmit} onClick={onClick} /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/character/:characterId" element={<Character />} />
