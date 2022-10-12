@@ -35,29 +35,31 @@ function Characters() {
                 <>
                     {/* <Pagination /> */}
 
-                    {page !== 1 && <Link to={`/characters/${page}`} onClick={() => {setpage(page - 1);}}>Précédent </Link>}
+                    {page !== 1 && <Link to={`/characters/${page}`} onClick={() => {setpage(page - 1);}}>Prev </Link>}
                     {/* <strong>{page}</strong> */}
                     <Link to={`/characters/${page}`} onClick={() => {setpage(page + 1);}}>Next</Link>
 
-
-                <div className="container content-grid">
-                    {data.results.map((character, index) => {
-                        const imgSrc = character.thumbnail.path + '.' + character.thumbnail.extension;
-                        return (
-                            <>
-                                <div className="col grid" key={index}>
-                                    <Card
-                                        imgSrc={imgSrc}
-                                        name={character.name}
-                                        description={character.description}
-                                        toChara={`/character/${character._id}`}
-                                        toComics={`/comics/${character._id}`}
-                                    />
-                                </div>
-                            </>
-                        );
-                    })}
-                </div>
+                    <div className="container content-grid">
+                        {data.results.map((character, index) => {
+                            const imgSrc = character.thumbnail.path + '.' + character.thumbnail.extension;
+                            return (
+                                <>
+                                    <div className="col grid" key={index}>
+                                        <Card
+                                            imgSrc={imgSrc}
+                                            name={character.name}
+                                            description={character.description}
+                                            toChara={`/character/${character._id}`}
+                                            toComics={`/comics/${character._id}`}
+                                        />
+                                    </div>
+                                </>
+                            );
+                        })}
+                    </div>
+                    {page !== 1 && <Link to={`/characters/${page}`} onClick={() => {setpage(page - 1);}}>Prev </Link>}
+                    {/* <strong>{page}</strong> */}
+                    <Link to={`/characters/${page}`} onClick={() => {setpage(page + 1);}}>Next</Link>
                 </>
             )}
         </div>
